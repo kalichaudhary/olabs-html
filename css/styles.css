@@ -72,9 +72,6 @@ nav .nav-link {
     max-width: 956px;
 }
 
-.hero-btns {
-}
-
 .btn {
     display: inline-block;
     text-decoration: none;
@@ -315,5 +312,15 @@ footer .logo {
     .article-grid {
         flex-direction: column;
         grid-template-columns: 1fr;
+    }
+
+    .hero-partners {
+        flex-wrap: wrap;
+        gap: var(--space-4);
+    }
+
+    .hero-partners img {
+        max-width: 140px;
+        height: auto;
     }
 }
