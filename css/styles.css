@@ -168,7 +168,7 @@ nav .nav-link {
 /* Mission & Proposition Flex */
 .mission,
 .proposition {
-    padding: var(--space-11) 0;
+
 }
 
 .flex-layout {
@@ -260,7 +260,6 @@ nav .nav-link {
 
 /* Contact Form */
 .contact {
-    padding: var(--space-12) 0;
     background-color: #fff;
 }
 
