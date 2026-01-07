@@ -47,7 +47,6 @@ nav .nav-link {
     text-decoration: none;
     margin-left: var(--space-6);
     font-weight: 500;
-    padding: var(--space-3) var(--space-5);
     border-radius: 4px;
 }
 
@@ -60,11 +59,10 @@ nav .nav-link {
 .hero {
     background: #000;
     color: #fff;
-    padding: var(--space-12) 0;
 }
 
 .hero h1 {
-    max-width: 800px;
+    max-width: 950px;
     margin: 0 auto var(--space-6);
 }
 
