@@ -300,6 +300,12 @@
     margin-right: var(--space-8);
 }
 
+/* Auto centering */
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
 /* Y axis */
 .my-0 {
     margin-top: var(--space-0);
@@ -755,6 +761,11 @@
         margin-right: var(--space-8);
     }
 
+    .md\:mx-auto {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
     .md\:my-0 {
         margin-top: var(--space-0);
         margin-bottom: var(--space-0);
@@ -1202,6 +1213,11 @@
     .lg\:mx-8 {
         margin-left: var(--space-8);
         margin-right: var(--space-8);
+    }
+
+    .lg\:mx-auto {
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .lg\:my-0 {
@@ -1653,6 +1669,11 @@
         margin-right: var(--space-8);
     }
 
+    .xl\:mx-auto {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
     .xl\:my-0 {
         margin-top: var(--space-0);
         margin-bottom: var(--space-0);
@@ -2100,6 +2121,11 @@
     .xxl\:mx-8 {
         margin-left: var(--space-8);
         margin-right: var(--space-8);
+    }
+
+    .xxl\:mx-auto {
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .xxl\:my-0 {

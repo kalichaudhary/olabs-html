@@ -70,7 +70,6 @@ nav .nav-link {
     font-size: 1.2rem;
     color: #ccc;
     max-width: 956px;
-    margin: 0 auto var(--space-8);
 }
 
 .hero-btns {
