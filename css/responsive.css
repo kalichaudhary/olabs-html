@@ -261,6 +261,18 @@
 .m-8 {
     margin: var(--space-8);
 }
+.m-9 {
+    margin: var(--space-9);
+}
+.m-10 {
+    margin: var(--space-10);
+}
+.m-11 {
+    margin: var(--space-11);
+}
+.m-12 {
+    margin: var(--space-12);
+}
 
 /* X axis */
 .mx-0 {
@@ -298,6 +310,22 @@
 .mx-8 {
     margin-left: var(--space-8);
     margin-right: var(--space-8);
+}
+.mx-9 {
+    margin-left: var(--space-9);
+    margin-right: var(--space-9);
+}
+.mx-10 {
+    margin-left: var(--space-10);
+    margin-right: var(--space-10);
+}
+.mx-11 {
+    margin-left: var(--space-11);
+    margin-right: var(--space-11);
+}
+.mx-12 {
+    margin-left: var(--space-12);
+    margin-right: var(--space-12);
 }
 
 /* Auto centering */
@@ -343,6 +371,22 @@
     margin-top: var(--space-8);
     margin-bottom: var(--space-8);
 }
+.my-9 {
+    margin-top: var(--space-9);
+    margin-bottom: var(--space-9);
+}
+.my-10 {
+    margin-top: var(--space-10);
+    margin-bottom: var(--space-10);
+}
+.my-11 {
+    margin-top: var(--space-11);
+    margin-bottom: var(--space-11);
+}
+.my-12 {
+    margin-top: var(--space-12);
+    margin-bottom: var(--space-12);
+}
 
 /* Individual */
 .mt-0 {
@@ -372,6 +416,18 @@
 .mt-8 {
     margin-top: var(--space-8);
 }
+.mt-9 {
+    margin-top: var(--space-9);
+}
+.mt-10 {
+    margin-top: var(--space-10);
+}
+.mt-11 {
+    margin-top: var(--space-11);
+}
+.mt-12 {
+    margin-top: var(--space-12);
+}
 
 .mr-0 {
     margin-right: var(--space-0);
@@ -399,6 +455,18 @@
 }
 .mr-8 {
     margin-right: var(--space-8);
+}
+.mr-9 {
+    margin-right: var(--space-9);
+}
+.mr-10 {
+    margin-right: var(--space-10);
+}
+.mr-11 {
+    margin-right: var(--space-11);
+}
+.mr-12 {
+    margin-right: var(--space-12);
 }
 
 .mb-0 {
@@ -428,6 +496,18 @@
 .mb-8 {
     margin-bottom: var(--space-8);
 }
+.mb-9 {
+    margin-bottom: var(--space-9);
+}
+.mb-10 {
+    margin-bottom: var(--space-10);
+}
+.mb-11 {
+    margin-bottom: var(--space-11);
+}
+.mb-12 {
+    margin-bottom: var(--space-12);
+}
 
 .ml-0 {
     margin-left: var(--space-0);
@@ -455,6 +535,18 @@
 }
 .ml-8 {
     margin-left: var(--space-8);
+}
+.ml-9 {
+    margin-left: var(--space-9);
+}
+.ml-10 {
+    margin-left: var(--space-10);
+}
+.ml-11 {
+    margin-left: var(--space-11);
+}
+.ml-12 {
+    margin-left: var(--space-12);
 }
 
 /* 3. Responsive Breakpoints (sm, md, lg, xl, xxl)  */
@@ -885,6 +977,18 @@
     }
     .md\:mb-8 {
         margin-bottom: var(--space-8);
+    }
+    .md\:mb-9 {
+        margin-bottom: var(--space-9);
+    }
+    .md\:mb-10 {
+        margin-bottom: var(--space-10);
+    }
+    .md\:mb-11 {
+        margin-bottom: var(--space-11);
+    }
+    .md\:mb-12 {
+        margin-bottom: var(--space-12);
     }
 
     .md\:ml-0 {
@@ -1340,6 +1444,18 @@
     .lg\:mb-8 {
         margin-bottom: var(--space-8);
     }
+    .lg\:mb-9 {
+        margin-bottom: var(--space-9);
+    }
+    .lg\:mb-10 {
+        margin-bottom: var(--space-10);
+    }
+    .lg\:mb-11 {
+        margin-bottom: var(--space-11);
+    }
+    .lg\:mb-12 {
+        margin-bottom: var(--space-12);
+    }
 
     .lg\:ml-0 {
         margin-left: var(--space-0);
@@ -1794,6 +1910,18 @@
     .xl\:mb-8 {
         margin-bottom: var(--space-8);
     }
+    .xl\:mb-9 {
+        margin-bottom: var(--space-9);
+    }
+    .xl\:mb-10 {
+        margin-bottom: var(--space-10);
+    }
+    .xl\:mb-11 {
+        margin-bottom: var(--space-11);
+    }
+    .xl\:mb-12 {
+        margin-bottom: var(--space-12);
+    }
 
     .xl\:ml-0 {
         margin-left: var(--space-0);
@@ -2247,6 +2375,18 @@
     }
     .xxl\:mb-8 {
         margin-bottom: var(--space-8);
+    }
+    .xxl\:mb-9 {
+        margin-bottom: var(--space-9);
+    }
+    .xxl\:mb-10 {
+        margin-bottom: var(--space-10);
+    }
+    .xxl\:mb-11 {
+        margin-bottom: var(--space-11);
+    }
+    .xxl\:mb-12 {
+        margin-bottom: var(--space-12);
     }
 
     .xxl\:ml-0 {

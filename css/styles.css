@@ -73,7 +73,6 @@ nav .nav-link {
 }
 
 .hero-btns {
-    margin-bottom: var(--space-9);
 }
 
 .btn {
@@ -88,7 +87,6 @@ nav .nav-link {
 .btn-outline {
     border: 1px solid #fff;
     color: #fff;
-    margin: 0 var(--space-3);
 }
 
 .btn-outline:hover {
