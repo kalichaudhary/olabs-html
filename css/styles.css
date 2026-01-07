@@ -1,3 +1,5 @@
+@import url(responsive.css);
+@import url(typography.css);
 /* Global Reset & Typography */
 * {
     margin: 0;
@@ -15,7 +17,7 @@ body {
 .container {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 var(--space-6);
 }
 
 .text-center {
@@ -26,7 +28,7 @@ body {
 header {
     background: #000;
     color: white;
-    padding: 20px 0;
+    padding: var(--space-6) 0;
 }
 
 .nav-container {
@@ -43,9 +45,9 @@ header {
 nav .nav-link {
     color: #fff;
     text-decoration: none;
-    margin-left: 20px;
+    margin-left: var(--space-6);
     font-weight: 500;
-    padding: 8px 16px;
+    padding: var(--space-3) var(--space-5);
     border-radius: 4px;
 }
 
@@ -58,28 +60,28 @@ nav .nav-link {
 .hero {
     background: #000;
     color: #fff;
-    padding: 100px 0;
+    padding: var(--space-12) 0;
 }
 
 .hero h1 {
     max-width: 800px;
-    margin: 0 auto 20px;
+    margin: 0 auto var(--space-6);
 }
 
 .hero-sub {
     font-size: 1.2rem;
     color: #ccc;
     max-width: 600px;
-    margin: 0 auto 30px;
+    margin: 0 auto var(--space-8);
 }
 
 .hero-btns {
-    margin-bottom: 40px;
+    margin-bottom: var(--space-9);
 }
 
 .btn {
     display: inline-block;
-    padding: 12px 24px;
+    padding: var(--space-4) var(--space-7);
     text-decoration: none;
     border-radius: 5px;
     font-weight: 600;
@@ -89,7 +91,7 @@ nav .nav-link {
 .btn-outline {
     border: 1px solid #fff;
     color: #fff;
-    margin: 0 10px;
+    margin: 0 var(--space-3);
 }
 
 .btn-outline:hover {
@@ -114,7 +116,7 @@ nav .nav-link {
 
 /* Portfolio Section */
 .portfolio {
-    padding: 80px 0;
+    padding: var(--space-11) 0;
     background-color: #fcfcfc;
 }
 
@@ -122,11 +124,11 @@ nav .nav-link {
     display: flex;
     justify-content: center;
     gap: 10px;
-    margin-bottom: 40px;
+    margin-bottom: var(--space-9);
 }
 
 .tab {
-    padding: 8px 16px;
+    padding: var(--space-3) var(--space-5);
     background: #eee;
     border: none;
     border-radius: 20px;
@@ -154,7 +156,7 @@ nav .nav-link {
 }
 
 .card-content {
-    padding: 30px;
+    padding: var(--space-8);
 }
 
 .card-img img {
@@ -166,17 +168,17 @@ nav .nav-link {
     display: inline-block;
     background: #000;
     color: #fff;
-    padding: 5px 15px;
+    padding: var(--space-2) var(--space-4);
     text-decoration: none;
     border-radius: 4px;
     font-size: 0.8rem;
-    margin-top: 15px;
+    margin-top: var(--space-4);
 }
 
 /* Mission & Proposition Flex */
 .mission,
 .proposition {
-    padding: 80px 0;
+    padding: var(--space-11) 0;
 }
 
 .flex-layout {
@@ -201,23 +203,23 @@ nav .nav-link {
 
 .quote-box {
     background: #e9f1ee;
-    padding: 25px;
+    padding: var(--space-7);
     border-radius: 10px;
-    margin-top: 20px;
+    margin-top: var(--space-6);
 }
 
 .prop-list {
     list-style: none;
-    margin-top: 20px;
+    margin-top: var(--space-6);
 }
 
 .prop-list li {
-    margin-bottom: 15px;
+    margin-bottom: var(--space-4);
 }
 
 /* Upcoming Products */
 .upcoming {
-    padding: 80px 0;
+    padding: var(--space-11) 0;
 }
 
 .product-grid {
@@ -228,7 +230,7 @@ nav .nav-link {
 
 .prod-card {
     border: 1px solid #eee;
-    padding: 20px;
+    padding: var(--space-6);
     border-radius: 8px;
     display: flex;
     justify-content: space-between;
@@ -243,7 +245,7 @@ nav .nav-link {
 /* Articles Section */
 .articles {
     background-color: #dce7e3;
-    padding: 80px 0;
+    padding: var(--space-11) 0;
 }
 
 .article-grid {
@@ -263,27 +265,27 @@ nav .nav-link {
 }
 
 .article-body {
-    padding: 20px;
+    padding: var(--space-6);
 }
 
 /* Contact Form */
 .contact {
-    padding: 100px 0;
+    padding: var(--space-12) 0;
     background-color: #fff;
 }
 
 .form-wrapper {
     flex: 1.5;
     background: #fff;
-    padding: 30px;
+    padding: var(--space-8);
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
 }
 
 .contact-form input,
 .contact-form textarea {
     width: 100%;
-    padding: 12px;
-    margin-bottom: 15px;
+    padding: var(--space-4);
+    margin-bottom: var(--space-4);
     border: 1px solid #ddd;
     border-radius: 4px;
 }
@@ -297,16 +299,16 @@ nav .nav-link {
 footer {
     background: #000;
     color: #fff;
-    padding: 40px 0;
+    padding: var(--space-9) 0;
     font-size: 0.9rem;
 }
 
 footer .logo {
-    margin-bottom: 20px;
+    margin-bottom: var(--space-6);
 }
 
 .copyright {
-    margin-top: 20px;
+    margin-top: var(--space-6);
     opacity: 0.5;
 }
 
