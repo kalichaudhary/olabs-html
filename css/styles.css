@@ -118,10 +118,9 @@ nav .nav-link {
 }
 
 .tab {
-    padding: var(--space-3) var(--space-5);
     background: #eee;
     border: none;
-    border-radius: 20px;
+    border-radius: 4px;
     cursor: pointer;
 }
 
@@ -168,7 +167,6 @@ nav .nav-link {
 /* Mission & Proposition Flex */
 .mission,
 .proposition {
-
 }
 
 .flex-layout {
