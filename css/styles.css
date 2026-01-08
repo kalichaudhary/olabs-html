@@ -187,7 +187,6 @@ nav .nav-link {
 }
 
 .card-content {
-    padding: 32px;
     flex: 1;
 }
 
@@ -213,10 +212,13 @@ nav .nav-link {
 .card-img {
     overflow: hidden;
     background: #f8f8f8;
+    max-height: 235px;
+    height: 235px;
 }
 
 .card-img img {
     width: 100%;
+    height: 100%;
     display: block;
     object-fit: cover;
 }
@@ -398,6 +400,11 @@ footer .logo {
 
     .card-content {
         padding: 24px;
+    }
+
+    .card-img {
+        max-height: 180px;
+        height: 180px;
     }
 
     .card-top h3 {
