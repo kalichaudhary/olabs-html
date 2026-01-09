@@ -337,7 +337,7 @@ nav .nav-link:hover::before {
 }
 
 .hero-partners img {
-    max-height: 40px;
+    max-height: 100px;
     width: auto;
     filter: brightness(0) invert(1);
     transition: all var(--transition-base);
