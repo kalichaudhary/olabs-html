@@ -1107,7 +1107,7 @@ nav .nav-link:hover::before {
 .contact-form input,
 .contact-form textarea {
     width: 100%;
-    padding: var(--space-4);
+    padding: var(--space-2) var(--space-4);
     margin-bottom: var(--space-4);
     border: 2px solid var(--gray-200);
     border-radius: var(--radius-md);
