@@ -866,7 +866,6 @@ nav .nav-link:hover::before {
 
 .prod-card {
     border: 1px solid var(--gray-200);
-    padding: var(--space-6);
     border-radius: var(--radius-lg);
     display: flex;
     justify-content: space-between;
