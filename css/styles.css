@@ -1060,7 +1060,8 @@ nav .nav-link:hover::before {
 
 /* Contact Form */
 .contact {
-    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    /* background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%); */
+    background-color: #f8f5f3;
 }
 
 .contact-points {
