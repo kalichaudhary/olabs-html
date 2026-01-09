@@ -14,6 +14,94 @@
     --space-10: clamp(40px, 6vw, 60px);
     --space-11: clamp(60px, 7vw, 80px);
     --space-12: clamp(80px, 8vw, 100px);
+    
+    /* Responsive font sizes using clamp for fluid typography */
+    --font-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+    --font-sm: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);
+    --font-base: clamp(1rem, 0.9rem + 0.5vw, 1.125rem);
+    --font-lg: clamp(1.125rem, 1rem + 0.625vw, 1.25rem);
+    --font-xl: clamp(1.25rem, 1.1rem + 0.75vw, 1.5rem);
+    --font-2xl: clamp(1.5rem, 1.3rem + 1vw, 2rem);
+    --font-3xl: clamp(1.875rem, 1.5rem + 1.875vw, 2.5rem);
+    --font-4xl: clamp(2.25rem, 1.8rem + 2.25vw, 3rem);
+    
+    /* Container widths for different breakpoints */
+    --container-xs: 100%;
+    --container-sm: 640px;
+    --container-md: 768px;
+    --container-lg: 1024px;
+    --container-xl: 1280px;
+    --container-2xl: 1536px;
+}
+
+/* Advanced Responsive Container with Breakpoint-based Max Width */
+@media (min-width: 640px) {
+    .container {
+        max-width: var(--container-sm);
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: var(--container-md);
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        max-width: var(--container-lg);
+    }
+}
+
+@media (min-width: 1280px) {
+    .container {
+        max-width: var(--container-xl);
+    }
+}
+
+/* Mobile-First Responsive Utilities */
+/* Hidden classes for responsive design */
+.hidden {
+    display: none;
+}
+
+@media (max-width: 639px) {
+    .hidden-mobile {
+        display: none !important;
+    }
+    .visible-mobile {
+        display: block !important;
+    }
+}
+
+@media (min-width: 640px) and (max-width: 767px) {
+    .hidden-tablet {
+        display: none !important;
+    }
+    .visible-tablet {
+        display: block !important;
+    }
+}
+
+@media (min-width: 768px) {
+    .hidden-desktop {
+        display: none !important;
+    }
+    .visible-desktop {
+        display: block !important;
+    }
+}
+
+/* Touch target sizing for mobile accessibility (min 44x44px) */
+@media (max-width: 767px) {
+    button,
+    a,
+    input[type="button"],
+    input[type="submit"],
+    [role="button"] {
+        min-height: 44px;
+        min-width: 44px;
+    }
 }
 
 /* 1. Container classes */
@@ -4480,6 +4568,242 @@
     .xxxl\:gap-10 {
         gap: var(--space-10);
     }
+    .xxxl\:gap-11 {
+        gap: var(--space-11);
+    }
+    .xxxl\:gap-12 {
+        gap: var(--space-12);
+    }
+}
+
+/* ============================================
+   ADVANCED RESPONSIVE & ACCESSIBILITY FEATURES
+   ============================================ */
+
+/* Responsive Images - Intrinsic aspect ratio */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Picture element support for art direction */
+picture {
+    display: block;
+}
+
+/* Responsive Embed (for videos, iframes) */
+.responsive-embed {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+}
+
+.responsive-embed iframe,
+.responsive-embed object,
+.responsive-embed embed,
+.responsive-embed video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Grid System Enhancements */
+.grid-auto-fit {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-6);
+}
+
+.grid-auto-fill {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--space-6);
+}
+
+/* Flexbox Utilities */
+.flex-responsive {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+}
+
+/* Responsive Typography Scale */
+.text-responsive-xs {
+    font-size: var(--font-xs);
+}
+
+.text-responsive-sm {
+    font-size: var(--font-sm);
+}
+
+.text-responsive-base {
+    font-size: var(--font-base);
+}
+
+.text-responsive-lg {
+    font-size: var(--font-lg);
+}
+
+.text-responsive-xl {
+    font-size: var(--font-xl);
+}
+
+.text-responsive-2xl {
+    font-size: var(--font-2xl);
+}
+
+.text-responsive-3xl {
+    font-size: var(--font-3xl);
+}
+
+.text-responsive-4xl {
+    font-size: var(--font-4xl);
+}
+
+/* Print Styles */
+@media print {
+    *,
+    *::before,
+    *::after {
+        background: transparent !important;
+        color: #000 !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]::after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]::after {
+        content: " (" attr(title) ")";
+    }
+
+    img {
+        page-break-inside: avoid;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+
+    .no-print {
+        display: none !important;
+    }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --primary: #ffffff;
+        --secondary: #000000;
+        --gray-800: #e5e5e5;
+        --gray-700: #d4d4d4;
+        --gray-600: #a3a3a3;
+    }
+    
+    body {
+        background-color: #0a0a0a;
+        color: #e5e5e5;
+    }
+}
+
+/* Landscape Orientation Adjustments */
+@media (orientation: landscape) and (max-height: 500px) {
+    .hero {
+        min-height: auto;
+        padding-top: var(--space-4);
+        padding-bottom: var(--space-4);
+    }
+}
+
+/* Ultra-wide Screen Support */
+@media (min-width: 1920px) {
+    .container {
+        max-width: 1600px;
+    }
+}
+
+/* Small Mobile Devices */
+@media (max-width: 374px) {
+    :root {
+        --space-1: 2px;
+        --space-2: 4px;
+        --space-3: 6px;
+        --font-base: 0.875rem;
+    }
+    
+    .container {
+        padding: 0 var(--space-4);
+    }
+}
+
+/* Tablet Landscape Optimizations */
+@media (min-width: 768px) and (max-width: 1023px) and (orientation: landscape) {
+    .flex-layout {
+        flex-direction: row !important;
+    }
+    
+    .grid-auto-fit,
+    .grid-auto-fill {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Accessibility: Focus indicators for keyboard navigation */
+@media (hover: hover) and (pointer: fine) {
+    /* Enhanced hover states for mouse users */
+    a:hover,
+    button:hover {
+        opacity: 0.85;
+        transition: opacity var(--transition-base);
+    }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+    /* Remove hover effects on touch devices */
+    a:hover,
+    button:hover {
+        opacity: 1;
+    }
+    
+    /* Larger tap targets */
+    button,
+    a,
+    input,
+    select,
+    textarea {
+        min-height: 44px;
+        padding: 12px;
+    }
+}
+
+/* High DPI/Retina Display Support */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    /* Optimizations for high-resolution displays */
+    img {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+    }
+}
     .xxxl\:gap-11 {
         gap: var(--space-11);
     }
