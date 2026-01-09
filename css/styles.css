@@ -884,7 +884,7 @@ nav .nav-link:hover::before {
     left: 0;
     width: 4px;
     height: 100%;
-    background: linear-gradient(180deg, var(--accent) 0%, transparent 100%);
+    background: linear-gradient(180deg, var(--primary-light) 0%, transparent 100%);
     transform: scaleY(0);
     transform-origin: top;
     transition: transform var(--transition-base);
