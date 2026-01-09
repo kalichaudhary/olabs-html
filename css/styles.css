@@ -918,15 +918,10 @@ nav .nav-link:hover::before {
     font-weight: bold;
     color: var(--gray-300);
     font-size: 0.875rem;
-    background: var(--gray-100);
+    background: transparent;
     padding: var(--space-3) var(--space-4);
     border-radius: var(--radius-md);
     transition: all var(--transition-base);
-}
-
-.prod-card:hover .prod-logo {
-    background: var(--gray-200);
-    color: var(--gray-400);
 }
 
 /* Trusted By Section */
