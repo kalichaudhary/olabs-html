@@ -1159,7 +1159,7 @@ nav .nav-link:hover::before {
     display: block;
     color: #ef4444;
     font-size: 0.875rem;
-    margin-top: 0.5rem;
+    margin-top: 0.25rem;
     min-height: 1.25rem;
     font-weight: 500;
     opacity: 0;
