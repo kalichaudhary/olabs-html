@@ -1091,7 +1091,6 @@ nav .nav-link:hover::before {
 .form-wrapper {
     flex: 1.5;
     background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%);
-    padding: var(--space-8);
     border-radius: var(--radius-xl);
     box-shadow: var(--shadow-xl);
     border: 1px solid var(--gray-200);
@@ -1100,8 +1099,9 @@ nav .nav-link:hover::before {
 .form-note {
     color: var(--gray-600);
     margin-bottom: var(--space-6);
-    font-size: 0.95rem;
+    font-size: 1.3rem;
     line-height: 1.6;
+    font-weight: bold;
 }
 
 .contact-form input,
