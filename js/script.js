@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // ===== Tab Functionality for Portfolio Section =====
     const tabs = document.querySelectorAll('.tab');
+    const portfolioCards = document.querySelectorAll('.portfolio-card');
 
     tabs.forEach(tab => {
         tab.addEventListener('click', function () {
@@ -25,6 +26,21 @@ document.addEventListener('DOMContentLoaded', function () {
             tabs.forEach(t => t.classList.remove('active'));
             // Add active class to clicked tab
             this.classList.add('active');
+
+            // Get the selected category
+            const selectedCategory = this.getAttribute('data-category');
+
+            // Show/hide portfolio cards based on category
+            portfolioCards.forEach(card => {
+                const cardCategory = card.getAttribute('data-category');
+                if (cardCategory === selectedCategory) {
+                    card.style.display = 'grid';
+                    // Add fade-in animation
+                    card.style.animation = 'fadeIn 0.5s ease-in';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
 
             // Add ripple effect
             const ripple = document.createElement('span');

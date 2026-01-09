@@ -16,7 +16,11 @@
         <header class="py-1 md:py-2 lg:py-2 xl:py-3">
             <div class="container nav-container">
                 <div class="logo">
-                    <img src="./assets/olabs-logo.svg" alt="O.Labs Logo" srcset="">
+                    <img
+                        src="./assets/olabs-logo.svg"
+                        alt="O.Labs Logo"
+                        srcset=""
+                    />
                 </div>
                 <nav>
                     <a
@@ -71,18 +75,27 @@
             <div class="container">
                 <h2 class="section-title text-center">Portfolio Companies</h2>
                 <div class="tabs">
-                    <button class="tab active p-1 md:py-1 lg:py-1 xl:py-1">
+                    <button
+                        class="tab active p-1 md:py-1 lg:py-1 xl:py-1"
+                        data-category="edtech"
+                    >
                         <span>EdTech</span>
                     </button>
-                    <button class="tab p-1 md:py-1 lg:py-1 xl:py-1">
+                    <button
+                        class="tab p-1 md:py-1 lg:py-1 xl:py-1"
+                        data-category="sportstech"
+                    >
                         <span>SportsTech</span>
                     </button>
-                    <button class="tab p-1 md:py-1 lg:py-1 xl:py-1">
+                    <button
+                        class="tab p-1 md:py-1 lg:py-1 xl:py-1"
+                        data-category="healthcare"
+                    >
                         <span>HealthCare</span>
                     </button>
                 </div>
                 <div class="portfolio-grid">
-                    <div class="portfolio-card olive">
+                    <div class="portfolio-card olive" data-category="edtech">
                         <div class="card-content p-1 md:p-1 lg:p-1 xl:p-2">
                             <div class="card-top">
                                 <h3>OLIVE</h3>
@@ -119,7 +132,7 @@
                             />
                         </div>
                     </div>
-                    <div class="portfolio-card grinds">
+                    <div class="portfolio-card grinds" data-category="edtech">
                         <div class="card-content p-1 md:p-1 lg:p-1 xl:p-2">
                             <div class="card-top">
                                 <h3>GRINDS360°</h3>
@@ -154,6 +167,201 @@
                             <img
                                 src="./assets/portfolio/img2.png"
                                 alt="Grinds App"
+                            />
+                        </div>
+                    </div>
+
+                    <!-- SportsTech Cards -->
+                    <div
+                        class="portfolio-card"
+                        data-category="sportstech"
+                        style="
+                            display: none;
+                            background: linear-gradient(
+                                135deg,
+                                #667eea 0%,
+                                #764ba2 100%
+                            );
+                        "
+                    >
+                        <div class="card-content p-1 md:p-1 lg:p-1 xl:p-2">
+                            <div class="card-top">
+                                <h3>TACTIX AI</h3>
+                                <a
+                                    href="#"
+                                    class="btn-sm p-1 md:py-1 lg:py-1 xl:py-1"
+                                    >Visit website
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="16"
+                                        height="16"
+                                        viewBox="0 0 16 16"
+                                        fill="none"
+                                    >
+                                        <path
+                                            d="M15.5 1V5.5C15.5 5.77637 15.2764 6 15 6C14.7236 6 14.5 5.77637 14.5 5.5V2.207L7.3535 9.3535C7.25588 9.45113 7.12787 9.5 7 9.5C6.87213 9.5 6.74412 9.45113 6.6465 9.3535C6.45113 9.15812 6.45113 8.84175 6.6465 8.6465L13.793 1.5H10.5C10.2236 1.5 10 1.27637 10 1C10 0.723625 10.2236 0.5 10.5 0.5H15C15.2764 0.5 15.5 0.723625 15.5 1ZM13.5 14V8C13.5 7.72363 13.2764 7.5 13 7.5C12.7236 7.5 12.5 7.72363 12.5 8V14C12.5 14.2759 12.2759 14.5 12 14.5H2C1.72413 14.5 1.5 14.2759 1.5 14V4C1.5 3.72412 1.72413 3.5 2 3.5H8C8.27637 3.5 8.5 3.27638 8.5 3C8.5 2.72362 8.27637 2.5 8 2.5H2C1.17287 2.5 0.5 3.17287 0.5 4V14C0.5 14.8271 1.17287 15.5 2 15.5H12C12.8271 15.5 13.5 14.8271 13.5 14Z"
+                                            fill="white"
+                                        />
+                                    </svg>
+                                </a>
+                            </div>
+                            <p>
+                                TactixAI is an advanced sports analytics
+                                platform that uses AI and computer vision to
+                                provide real-time performance insights, tactical
+                                analysis, and data-driven coaching tools for
+                                teams and athletes.
+                            </p>
+                        </div>
+                        <div class="card-img p-1 md:p-1 lg:p-1 xl:p-2">
+                            <img
+                                src="./assets/portfolio/img1.png"
+                                alt="TactixAI Platform"
+                            />
+                        </div>
+                    </div>
+                    <div
+                        class="portfolio-card"
+                        data-category="sportstech"
+                        style="
+                            display: none;
+                            background: linear-gradient(
+                                135deg,
+                                #f093fb 0%,
+                                #f5576c 100%
+                            );
+                        "
+                    >
+                        <div class="card-content p-1 md:p-1 lg:p-1 xl:p-2">
+                            <div class="card-top">
+                                <h3>SOCIALTIES</h3>
+                                <a
+                                    href="#"
+                                    class="btn-sm p-1 md:py-1 lg:py-1 xl:py-1"
+                                    >Visit website
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="16"
+                                        height="16"
+                                        viewBox="0 0 16 16"
+                                        fill="none"
+                                    >
+                                        <path
+                                            d="M15.5 1V5.5C15.5 5.77637 15.2764 6 15 6C14.7236 6 14.5 5.77637 14.5 5.5V2.207L7.3535 9.3535C7.25588 9.45113 7.12787 9.5 7 9.5C6.87213 9.5 6.74412 9.45113 6.6465 9.3535C6.45113 9.15812 6.45113 8.84175 6.6465 8.6465L13.793 1.5H10.5C10.2236 1.5 10 1.27637 10 1C10 0.723625 10.2236 0.5 10.5 0.5H15C15.2764 0.5 15.5 0.723625 15.5 1ZM13.5 14V8C13.5 7.72363 13.2764 7.5 13 7.5C12.7236 7.5 12.5 7.72363 12.5 8V14C12.5 14.2759 12.2759 14.5 12 14.5H2C1.72413 14.5 1.5 14.2759 1.5 14V4C1.5 3.72412 1.72413 3.5 2 3.5H8C8.27637 3.5 8.5 3.27638 8.5 3C8.5 2.72362 8.27637 2.5 8 2.5H2C1.17287 2.5 0.5 3.17287 0.5 4V14C0.5 14.8271 1.17287 15.5 2 15.5H12C12.8271 15.5 13.5 14.8271 13.5 14Z"
+                                            fill="white"
+                                        />
+                                    </svg>
+                                </a>
+                            </div>
+                            <p>
+                                Socialties connects sports clubs with their
+                                communities through a comprehensive social
+                                platform, enabling fan engagement, event
+                                management, and membership coordination all in
+                                one place.
+                            </p>
+                        </div>
+                        <div class="card-img p-1 md:p-1 lg:p-1 xl:p-2">
+                            <img
+                                src="./assets/portfolio/img2.png"
+                                alt="Socialties App"
+                            />
+                        </div>
+                    </div>
+
+                    <!-- HealthCare Cards -->
+                    <div
+                        class="portfolio-card"
+                        data-category="healthcare"
+                        style="
+                            display: none;
+                            background: linear-gradient(
+                                135deg,
+                                #4facfe 0%,
+                                #00f2fe 100%
+                            );
+                        "
+                    >
+                        <div class="card-content p-1 md:p-1 lg:p-1 xl:p-2">
+                            <div class="card-top">
+                                <h3>VEPA</h3>
+                                <a
+                                    href="#"
+                                    class="btn-sm p-1 md:py-1 lg:py-1 xl:py-1"
+                                    >Visit website
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="16"
+                                        height="16"
+                                        viewBox="0 0 16 16"
+                                        fill="none"
+                                    >
+                                        <path
+                                            d="M15.5 1V5.5C15.5 5.77637 15.2764 6 15 6C14.7236 6 14.5 5.77637 14.5 5.5V2.207L7.3535 9.3535C7.25588 9.45113 7.12787 9.5 7 9.5C6.87213 9.5 6.74412 9.45113 6.6465 9.3535C6.45113 9.15812 6.45113 8.84175 6.6465 8.6465L13.793 1.5H10.5C10.2236 1.5 10 1.27637 10 1C10 0.723625 10.2236 0.5 10.5 0.5H15C15.2764 0.5 15.5 0.723625 15.5 1ZM13.5 14V8C13.5 7.72363 13.2764 7.5 13 7.5C12.7236 7.5 12.5 7.72363 12.5 8V14C12.5 14.2759 12.2759 14.5 12 14.5H2C1.72413 14.5 1.5 14.2759 1.5 14V4C1.5 3.72412 1.72413 3.5 2 3.5H8C8.27637 3.5 8.5 3.27638 8.5 3C8.5 2.72362 8.27637 2.5 8 2.5H2C1.17287 2.5 0.5 3.17287 0.5 4V14C0.5 14.8271 1.17287 15.5 2 15.5H12C12.8271 15.5 13.5 14.8271 13.5 14Z"
+                                            fill="white"
+                                        />
+                                    </svg>
+                                </a>
+                            </div>
+                            <p>
+                                VEPA is a cutting-edge virtual health assistant
+                                that leverages AI to provide personalized
+                                healthcare guidance, appointment scheduling, and
+                                patient monitoring for improved healthcare
+                                accessibility.
+                            </p>
+                        </div>
+                        <div class="card-img p-1 md:p-1 lg:p-1 xl:p-2">
+                            <img
+                                src="./assets/portfolio/img1.png"
+                                alt="VEPA Platform"
+                            />
+                        </div>
+                    </div>
+                    <div
+                        class="portfolio-card"
+                        data-category="healthcare"
+                        style="
+                            display: none;
+                            background: linear-gradient(
+                                135deg,
+                                #43e97b 0%,
+                                #38f9d7 100%
+                            );
+                        "
+                    >
+                        <div class="card-content p-1 md:p-1 lg:p-1 xl:p-2">
+                            <div class="card-top">
+                                <h3>VIDAI PRO</h3>
+                                <a
+                                    href="#"
+                                    class="btn-sm p-1 md:py-1 lg:py-1 xl:py-1"
+                                    >Visit website
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="16"
+                                        height="16"
+                                        viewBox="0 0 16 16"
+                                        fill="none"
+                                    >
+                                        <path
+                                            d="M15.5 1V5.5C15.5 5.77637 15.2764 6 15 6C14.7236 6 14.5 5.77637 14.5 5.5V2.207L7.3535 9.3535C7.25588 9.45113 7.12787 9.5 7 9.5C6.87213 9.5 6.74412 9.45113 6.6465 9.3535C6.45113 9.15812 6.45113 8.84175 6.6465 8.6465L13.793 1.5H10.5C10.2236 1.5 10 1.27637 10 1C10 0.723625 10.2236 0.5 10.5 0.5H15C15.2764 0.5 15.5 0.723625 15.5 1ZM13.5 14V8C13.5 7.72363 13.2764 7.5 13 7.5C12.7236 7.5 12.5 7.72363 12.5 8V14C12.5 14.2759 12.2759 14.5 12 14.5H2C1.72413 14.5 1.5 14.2759 1.5 14V4C1.5 3.72412 1.72413 3.5 2 3.5H8C8.27637 3.5 8.5 3.27638 8.5 3C8.5 2.72362 8.27637 2.5 8 2.5H2C1.17287 2.5 0.5 3.17287 0.5 4V14C0.5 14.8271 1.17287 15.5 2 15.5H12C12.8271 15.5 13.5 14.8271 13.5 14Z"
+                                            fill="white"
+                                        />
+                                    </svg>
+                                </a>
+                            </div>
+                            <p>
+                                VIDAI Pro transforms medical video content
+                                creation with AI-powered editing, automatic
+                                transcription, and HIPAA-compliant storage for
+                                healthcare professionals and medical education.
+                            </p>
+                        </div>
+                        <div class="card-img p-1 md:p-1 lg:p-1 xl:p-2">
+                            <img
+                                src="./assets/portfolio/img2.png"
+                                alt="VIDAI Pro"
                             />
                         </div>
                     </div>
