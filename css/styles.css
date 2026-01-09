@@ -1047,6 +1047,17 @@ nav .nav-link:hover::before {
     color: var(--accent);
 }
 
+.article-body p {
+    color: var(--gray-600);
+    line-height: 1.7;
+    flex: 1;
+}
+
+.article-body img {
+    border-radius: 8px;
+    object-fit: cover;
+}
+
 /* Contact Form */
 .contact {
     background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
