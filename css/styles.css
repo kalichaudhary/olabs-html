@@ -943,7 +943,6 @@ nav .nav-link:hover::before {
 }
 
 .section-sub {
-    max-width: 800px;
     margin: 0 auto var(--space-8);
     color: var(--gray-600);
     line-height: 1.8;
@@ -955,7 +954,6 @@ nav .nav-link:hover::before {
     align-items: center;
     gap: clamp(20px, 4vw, 50px);
     flex-wrap: wrap;
-    padding: var(--space-6);
 }
 
 .trusted-logos img {
