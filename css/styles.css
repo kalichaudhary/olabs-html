@@ -368,9 +368,8 @@ nav .nav-link:hover::before {
 .section-title {
     margin-bottom: var(--space-8);
     position: relative;
-    display: inline-block;
-    left: 50%;
-    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
 }
 
 .section-title::after {
