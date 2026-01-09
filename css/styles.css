@@ -372,10 +372,17 @@ nav .nav-link:hover::before {
     justify-content: center;
 }
 
+.section-title.left {
+    justify-content: flex-start;
+}
+.section-title.right {
+    justify-content: flex-end;
+}
+
 .section-title::after {
     content: '';
     position: absolute;
-    bottom: -10px;
+    bottom: -16px;
     left: 50%;
     transform: translateX(-50%);
     width: 60px;
@@ -387,6 +394,17 @@ nav .nav-link:hover::before {
         transparent
     );
     border-radius: var(--radius-full);
+}
+
+.section-title.left::after {
+    left: 0;
+    transform: none;
+}
+
+.section-title.right::after {
+    left: auto;
+    right: 0;
+    transform: none;
 }
 
 .tabs {
@@ -876,7 +894,11 @@ nav .nav-link:hover::before {
     left: 0;
     width: 4px;
     height: 100%;
-    background: linear-gradient(180deg, var(--primary-light) 0%, transparent 100%);
+    background: linear-gradient(
+        180deg,
+        var(--primary-light) 0%,
+        transparent 100%
+    );
     transform: scaleY(0);
     transform-origin: top;
     transition: transform var(--transition-base);
