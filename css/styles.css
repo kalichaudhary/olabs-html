@@ -961,12 +961,12 @@ nav .nav-link:hover::before {
 .trusted-logos img {
     height: 40px;
     width: auto;
-    filter: grayscale(100%) opacity(0.5);
+    /* filter: grayscale(100%) opacity(0.5); */
     transition: all var(--transition-base);
 }
 
 .trusted-logos img:hover {
-    filter: grayscale(0%) opacity(1);
+    /* filter: grayscale(0%) opacity(1); */
     transform: scale(1.1);
 }
 
