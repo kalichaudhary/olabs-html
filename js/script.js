@@ -16,6 +16,39 @@ document.addEventListener('DOMContentLoaded', function () {
         lastScroll = currentScroll;
     });
 
+    // ===== Careers: Video Dialog (optional) =====
+    const careersVideoOpenBtn = document.querySelector(
+        '[data-careers-video-open]'
+    );
+    const careersVideoCloseBtn = document.querySelector(
+        '[data-careers-video-close]'
+    );
+    const careersVideoDialog = document.getElementById('careersVideoDialog');
+
+    if (careersVideoOpenBtn && careersVideoDialog) {
+        careersVideoOpenBtn.addEventListener('click', () => {
+            if (typeof careersVideoDialog.showModal === 'function') {
+                careersVideoDialog.showModal();
+            } else {
+                // Fallback for older browsers
+                alert('Video modal is not supported in this browser.');
+            }
+        });
+
+        if (careersVideoCloseBtn) {
+            careersVideoCloseBtn.addEventListener('click', () => {
+                careersVideoDialog.close();
+            });
+        }
+
+        careersVideoDialog.addEventListener('click', e => {
+            // Close when clicking the backdrop area
+            if (e.target === careersVideoDialog) {
+                careersVideoDialog.close();
+            }
+        });
+    }
+
     // ===== Tab Functionality for Portfolio Section =====
     const tabs = document.querySelectorAll('.tab');
     const portfolioCards = document.querySelectorAll('.portfolio-card');
