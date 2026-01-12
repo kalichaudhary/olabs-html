@@ -1629,7 +1629,7 @@ footer p {
 }
 
 .careers-tile.span-2 {
-    width: calc((var(--careers-tile-w) * 2) + var(--careers-tile-gap));
+    /* width: calc((var(--careers-tile-w) * 2) + var(--careers-tile-gap)); */
 }
 
 @media (prefers-reduced-motion: reduce) {
