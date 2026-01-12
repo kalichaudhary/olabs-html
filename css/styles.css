@@ -1648,6 +1648,7 @@ footer p {
     backdrop-filter: blur(var(--blur-md));
     border: 1px solid rgba(255, 255, 255, 0.18);
     box-shadow: var(--shadow-2xl);
+    z-index: 3;
 }
 
 .careers-hero-card h1 {
