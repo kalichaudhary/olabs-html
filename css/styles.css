@@ -418,17 +418,6 @@ nav .nav-link:hover::before {
     position: relative;
 }
 
-/* Limit Portfolio section content width */
-.portfolio .container,
-.mission .container,
-.proposition .container,
-.upcoming .container,
-.trusted .container,
-.articles .container,
-.contact .container {
-    max-width: 980px;
-}
-
 .portfolio::before {
     content: '';
     position: absolute;
@@ -1702,4 +1691,15 @@ footer p {
         box-shadow: none;
         border: 1px solid var(--gray-300);
     }
+}
+
+/* Limit Portfolio section content width */
+.portfolio .container,
+.mission .container,
+.proposition .container,
+.upcoming .container,
+.trusted .container,
+.articles .container,
+.contact .container {
+    max-width: 980px !important;
 }

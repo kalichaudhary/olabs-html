@@ -14,7 +14,7 @@
     --space-10: clamp(40px, 6vw, 60px);
     --space-11: clamp(60px, 7vw, 80px);
     --space-12: clamp(80px, 8vw, 100px);
-    
+
     /* Responsive font sizes using clamp for fluid typography */
     --font-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
     --font-sm: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);
@@ -24,7 +24,7 @@
     --font-2xl: clamp(1.5rem, 1.3rem + 1vw, 2rem);
     --font-3xl: clamp(1.875rem, 1.5rem + 1.875vw, 2.5rem);
     --font-4xl: clamp(2.25rem, 1.8rem + 2.25vw, 3rem);
-    
+
     /* Container widths for different breakpoints */
     --container-xs: 100%;
     --container-sm: 640px;
@@ -96,9 +96,9 @@
 @media (max-width: 767px) {
     button,
     a,
-    input[type="button"],
-    input[type="submit"],
-    [role="button"] {
+    input[type='button'],
+    input[type='submit'],
+    [role='button'] {
         min-height: 44px;
         min-width: 44px;
     }
@@ -4681,11 +4681,11 @@ picture {
     }
 
     a[href]::after {
-        content: " (" attr(href) ")";
+        content: ' (' attr(href) ')';
     }
 
     abbr[title]::after {
-        content: " (" attr(title) ")";
+        content: ' (' attr(title) ')';
     }
 
     img {
@@ -4718,7 +4718,7 @@ picture {
         --gray-700: #d4d4d4;
         --gray-600: #a3a3a3;
     }
-    
+
     body {
         background-color: #0a0a0a;
         color: #e5e5e5;
@@ -4749,7 +4749,7 @@ picture {
         --space-3: 6px;
         --font-base: 0.875rem;
     }
-    
+
     .container {
         padding: 0 var(--space-4);
     }
@@ -4760,7 +4760,7 @@ picture {
     .flex-layout {
         flex-direction: row !important;
     }
-    
+
     .grid-auto-fit,
     .grid-auto-fill {
         grid-template-columns: repeat(2, 1fr);
@@ -4784,7 +4784,7 @@ picture {
     button:hover {
         opacity: 1;
     }
-    
+
     /* Larger tap targets */
     button,
     a,
@@ -4803,7 +4803,7 @@ picture {
         image-rendering: -webkit-optimize-contrast;
         image-rendering: crisp-edges;
     }
-}
+
     .xxxl\:gap-11 {
         gap: var(--space-11);
     }
