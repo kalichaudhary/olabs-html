@@ -26,6 +26,23 @@ document.addEventListener('DOMContentLoaded', function () {
     const careersVideoDialog = document.getElementById('careersVideoDialog');
 
     let careersVideoLastActiveEl = null;
+    let careersVideoCloseTimer = null;
+    let careersVideoIsClosing = false;
+
+    function closeCareersVideoDialogWithEffect() {
+        if (!careersVideoDialog || !careersVideoDialog.open) return;
+        if (careersVideoIsClosing) return;
+
+        careersVideoIsClosing = true;
+        careersVideoDialog.classList.add('closing');
+
+        window.clearTimeout(careersVideoCloseTimer);
+        careersVideoCloseTimer = window.setTimeout(() => {
+            careersVideoDialog.classList.remove('closing');
+            careersVideoIsClosing = false;
+            careersVideoDialog.close();
+        }, 190);
+    }
 
     if (careersVideoOpenBtns.length && careersVideoDialog) {
         careersVideoOpenBtns.forEach(btn => {
@@ -43,24 +60,27 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (careersVideoCloseBtn) {
             careersVideoCloseBtn.addEventListener('click', () => {
-                careersVideoDialog.close();
+                closeCareersVideoDialogWithEffect();
             });
         }
 
         careersVideoDialog.addEventListener('click', e => {
             // Close when clicking the backdrop area
             if (e.target === careersVideoDialog) {
-                careersVideoDialog.close();
+                closeCareersVideoDialogWithEffect();
             }
         });
 
         careersVideoDialog.addEventListener('cancel', e => {
             // Ensure Escape consistently closes without side-effects
             e.preventDefault();
-            careersVideoDialog.close();
+            closeCareersVideoDialogWithEffect();
         });
 
         careersVideoDialog.addEventListener('close', () => {
+            window.clearTimeout(careersVideoCloseTimer);
+            careersVideoDialog.classList.remove('closing');
+            careersVideoIsClosing = false;
             if (
                 careersVideoLastActiveEl &&
                 typeof careersVideoLastActiveEl.focus === 'function'

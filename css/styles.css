@@ -1880,6 +1880,9 @@ footer p {
     box-shadow: var(--shadow-2xl);
     max-height: min(85vh, 820px);
     overflow: hidden;
+    opacity: 0;
+    transform: translateY(8px) scale(0.985);
+    will-change: transform, opacity;
 }
 
 /* Keep the native <dialog> centered reliably across browsers */
@@ -1887,11 +1890,74 @@ footer p {
     position: fixed;
     inset: 0;
     margin: auto;
+    animation: careersDialogIn 240ms var(--transition-spring) both;
+}
+
+.careers-dialog.closing {
+    animation: careersDialogOut 180ms var(--transition-fast) both;
 }
 
 .careers-dialog::backdrop {
     background: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(3px);
+    opacity: 0;
+}
+
+.careers-dialog[open]::backdrop {
+    animation: careersDialogBackdropIn 240ms var(--transition-base) both;
+}
+
+.careers-dialog.closing::backdrop {
+    animation: careersDialogBackdropOut 180ms var(--transition-fast) both;
+}
+
+@keyframes careersDialogIn {
+    from {
+        opacity: 0;
+        transform: translateY(12px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes careersDialogOut {
+    from {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(10px) scale(0.985);
+    }
+}
+
+@keyframes careersDialogBackdropIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes careersDialogBackdropOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .careers-dialog[open],
+    .careers-dialog.closing,
+    .careers-dialog[open]::backdrop,
+    .careers-dialog.closing::backdrop {
+        animation: none !important;
+    }
 }
 
 .careers-dialog-inner {
@@ -1947,6 +2013,26 @@ footer p {
     justify-content: center;
     color: rgba(255, 255, 255, 0.85);
     font-weight: 800;
+}
+
+@media (max-width: 640px) {
+    .careers-dialog {
+        width: calc(100% - (var(--space-4) * 2));
+        max-height: 92vh;
+        border-radius: var(--radius-lg);
+    }
+
+    .careers-dialog-top {
+        padding: 12px 14px;
+    }
+
+    .careers-dialog-body {
+        padding: 14px;
+    }
+
+    .careers-dialog-placeholder {
+        height: 220px;
+    }
 }
 
 @media (max-width: 1024px) {
