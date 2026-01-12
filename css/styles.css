@@ -418,6 +418,17 @@ nav .nav-link:hover::before {
     position: relative;
 }
 
+/* Limit Portfolio section content width */
+.portfolio .container,
+.mission .container,
+.proposition .container,
+.upcoming .container,
+.trusted .container,
+.articles .container,
+.contact .container {
+    max-width: 980px;
+}
+
 .portfolio::before {
     content: '';
     position: absolute;
@@ -784,7 +795,7 @@ nav .nav-link:hover::before {
 
 .flex-layout {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: clamp(30px, 6vw, 80px);
 }
 
@@ -1445,6 +1456,13 @@ footer {
     overflow: hidden;
 }
 
+footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
 footer::before {
     content: '';
     position: absolute;
@@ -1462,11 +1480,17 @@ footer::before {
 
 footer .logo {
     margin-bottom: var(--space-6);
+    display: flex;
+    justify-content: center;
     font-size: 1.75rem;
     background: linear-gradient(135deg, #fff 0%, #999 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+}
+
+footer address {
+    margin: 0;
 }
 
 footer p {
