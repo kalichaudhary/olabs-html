@@ -1830,7 +1830,7 @@ footer p {
 }
 
 .careers-card-grid.four {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .careers-role-card {
@@ -1849,7 +1849,6 @@ footer p {
 .careers-role-card h3 {
     font-size: 0.95rem;
     line-height: 1.25;
-    margin-bottom: var(--space-2);
     font-weight: 800;
     max-width: 60ch;
 }
@@ -2037,7 +2036,13 @@ footer p {
 
 @media (max-width: 1024px) {
     .careers-mosaic {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+        --careers-tile-w: clamp(140px, 26vw, 210px);
+        --careers-tile-h: clamp(84px, 12vw, 130px);
+        --careers-tile-gap: clamp(7px, 1.4vw, 12px);
+    }
+
+    .careers-card-grid.four {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
 
@@ -2057,12 +2062,26 @@ footer p {
     }
 
     .careers-mosaic {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        grid-auto-rows: 120px;
+        --careers-tile-w: clamp(120px, 44vw, 180px);
+        --careers-tile-h: clamp(76px, 18vw, 115px);
+        --careers-tile-gap: clamp(6px, 2vw, 12px);
     }
 
-    .careers-tile.span-2 {
-        grid-column: span 2;
+    /* Slightly faster on mobile so the shorter track still feels lively */
+    .careers-mosaic .row-1 .careers-marquee-track {
+        animation-duration: 28s;
+    }
+
+    .careers-mosaic .row-2 .careers-marquee-track {
+        animation-duration: 31s;
+    }
+
+    .careers-mosaic .row-3 .careers-marquee-track {
+        animation-duration: 30s;
+    }
+
+    .careers-hero-card {
+        width: min(520px, calc(100% - (var(--space-4) * 2)));
     }
 }
 
@@ -2074,6 +2093,27 @@ footer p {
     .careers-watch {
         top: 12px;
         left: 12px;
+    }
+
+    .careers-hero-card {
+        position: relative;
+        left: auto;
+        top: auto;
+        transform: none;
+        margin: var(--space-4) auto var(--space-2);
+        padding: 16px;
+    }
+
+    .careers-role-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-3);
+        padding: var(--space-4);
+    }
+
+    .careers-arrow {
+        margin-left: 0;
+        align-self: flex-end;
     }
 }
 
