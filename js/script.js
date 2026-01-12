@@ -16,6 +16,78 @@ document.addEventListener('DOMContentLoaded', function () {
         lastScroll = currentScroll;
     });
 
+    // ===== Mobile Navigation (Off-canvas) =====
+    const navToggleBtn = document.querySelector('[data-nav-toggle]');
+    const navBackdrop = document.querySelector('[data-nav-backdrop]');
+    const primaryNav = document.getElementById('primary-nav');
+
+    if (navToggleBtn && primaryNav) {
+        const setExpanded = isExpanded => {
+            navToggleBtn.setAttribute(
+                'aria-expanded',
+                isExpanded ? 'true' : 'false'
+            );
+            navToggleBtn.setAttribute(
+                'aria-label',
+                isExpanded ? 'Close menu' : 'Open menu'
+            );
+            if (navBackdrop) {
+                navBackdrop.setAttribute(
+                    'aria-hidden',
+                    isExpanded ? 'false' : 'true'
+                );
+            }
+        };
+
+        const closeNav = () => {
+            if (!document.body.classList.contains('nav-open')) return;
+            document.body.classList.remove('nav-open');
+            setExpanded(false);
+        };
+
+        const openNav = () => {
+            if (document.body.classList.contains('nav-open')) return;
+            document.body.classList.add('nav-open');
+            setExpanded(true);
+
+            const firstLink = primaryNav.querySelector('a[href]');
+            if (firstLink && typeof firstLink.focus === 'function') {
+                firstLink.focus();
+            }
+        };
+
+        // Ensure initial state is consistent
+        setExpanded(false);
+
+        navToggleBtn.addEventListener('click', () => {
+            if (document.body.classList.contains('nav-open')) {
+                closeNav();
+            } else {
+                openNav();
+            }
+        });
+
+        if (navBackdrop) {
+            navBackdrop.addEventListener('click', closeNav);
+        }
+
+        primaryNav.addEventListener('click', e => {
+            const target = e.target;
+            if (target && target.matches && target.matches('a[href]')) {
+                closeNav();
+            }
+        });
+
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape') closeNav();
+        });
+
+        // If user rotates / resizes to desktop, ensure the menu is closed
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) closeNav();
+        });
+    }
+
     // ===== Careers: Video Dialog (optional) =====
     const careersVideoOpenBtns = document.querySelectorAll(
         '[data-careers-video-open]'

@@ -103,7 +103,18 @@
                         />
                     </a>
                 </div>
-                               <nav role="navigation" aria-label="Main navigation">
+                <button
+                    class="nav-toggle"
+                    type="button"
+                    aria-label="Open menu"
+                    aria-controls="primary-nav"
+                    aria-expanded="false"
+                    data-nav-toggle
+                >
+                    <span class="nav-toggle-icon" aria-hidden="true"></span>
+                </button>
+
+                <nav id="primary-nav" class="site-nav" role="navigation" aria-label="Main navigation">
                     <a
                         href="#main-content"
                         class="nav-link active px-3 py-1 md:py-1 lg:py-1 xl:py-1"
@@ -115,6 +126,8 @@
                     <a href="careers.html" class="nav-link px-3 py-1 md:py-1 lg:py-1 xl:py-1">Careers</a>
                     <a href="#contact" class="nav-link px-3 py-1 md:py-1 lg:py-1 xl:py-1">Contact</a>
                 </nav>
+
+                <div class="nav-backdrop" data-nav-backdrop aria-hidden="true"></div>
             </div>
         </header>
 

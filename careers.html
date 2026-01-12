@@ -162,7 +162,23 @@
                         />
                     </a>
                 </div>
-                <nav role="navigation" aria-label="Main navigation">
+                <button
+                    class="nav-toggle"
+                    type="button"
+                    aria-label="Open menu"
+                    aria-controls="primary-nav"
+                    aria-expanded="false"
+                    data-nav-toggle
+                >
+                    <span class="nav-toggle-icon" aria-hidden="true"></span>
+                </button>
+
+                <nav
+                    id="primary-nav"
+                    class="site-nav"
+                    role="navigation"
+                    aria-label="Main navigation"
+                >
                     <a href="index.html" class="nav-link px-3 py-1">Home</a>
                     <a href="index.html#about" class="nav-link px-3 py-1"
                         >About</a
@@ -180,6 +196,12 @@
                         >Contact</a
                     >
                 </nav>
+
+                <div
+                    class="nav-backdrop"
+                    data-nav-backdrop
+                    aria-hidden="true"
+                ></div>
             </div>
         </header>
 
@@ -529,7 +551,9 @@
                             <a class="careers-role-card" href="#apply">
                                 <div>
                                     <h3>
-                                        Finance Business Partner – close to the business and with influence in everyday life
+                                        Finance Business Partner – close to the
+                                        business and with influence in everyday
+                                        life
                                     </h3>
                                     <p>
                                         Application deadline:
