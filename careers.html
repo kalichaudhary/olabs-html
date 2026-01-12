@@ -5,14 +5,51 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
+        <!-- Primary Meta Tags -->
         <title>Careers | O.Labs</title>
+        <meta name="title" content="Careers | O.Labs" />
         <meta
             name="description"
             content="Join O.Labs. Explore open roles and unsolicited applications."
         />
+        <meta
+            name="keywords"
+            content="O.Labs careers, jobs, openings, hiring, unsolicited application, Nepal, remote"
+        />
+        <meta name="author" content="O.Labs" />
         <meta name="robots" content="index, follow" />
+        <meta name="language" content="English" />
+        <meta name="revisit-after" content="7 days" />
 
         <link rel="canonical" href="https://www.olabs.ie/careers" />
+
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.olabs.ie/careers" />
+        <meta property="og:title" content="Careers | O.Labs" />
+        <meta
+            property="og:description"
+            content="Join O.Labs. Explore open roles and unsolicited applications."
+        />
+        <meta
+            property="og:image"
+            content="https://www.olabs.ie/assets/proposition.png"
+        />
+        <meta property="og:site_name" content="O.Labs" />
+        <meta property="og:locale" content="en_US" />
+
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content="https://www.olabs.ie/careers" />
+        <meta name="twitter:title" content="Careers | O.Labs" />
+        <meta
+            name="twitter:description"
+            content="Join O.Labs. Explore open roles and unsolicited applications."
+        />
+        <meta
+            name="twitter:image"
+            content="https://www.olabs.ie/assets/proposition.png"
+        />
 
         <!-- Favicon / App -->
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
@@ -35,6 +72,70 @@
         />
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#000000" />
+        <meta name="msapplication-TileColor" content="#000000" />
+
+        <!-- Structured Data: Organization + WebPage + Breadcrumbs -->
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@graph": [
+                    {
+                        "@type": "WebSite",
+                        "@id": "https://www.olabs.ie/#website",
+                        "url": "https://www.olabs.ie/",
+                        "name": "O.Labs"
+                    },
+                    {
+                        "@type": "Organization",
+                        "@id": "https://www.olabs.ie/#organization",
+                        "name": "O.Labs",
+                        "url": "https://www.olabs.ie",
+                        "logo": "https://www.olabs.ie/assets/olabs-Logo.svg",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "streetAddress": "Suite 2 The Cubes Offices, Beacon South Quarter, Sandyford",
+                            "addressLocality": "Dublin",
+                            "addressCountry": "IE",
+                            "postalCode": "D18HK83"
+                        }
+                    },
+                    {
+                        "@type": "WebPage",
+                        "@id": "https://www.olabs.ie/careers#webpage",
+                        "url": "https://www.olabs.ie/careers",
+                        "name": "Careers | O.Labs",
+                        "description": "Join O.Labs. Explore open roles and unsolicited applications.",
+                        "isPartOf": {
+                            "@id": "https://www.olabs.ie/#website"
+                        },
+                        "about": {
+                            "@id": "https://www.olabs.ie/#organization"
+                        },
+                        "breadcrumb": {
+                            "@id": "https://www.olabs.ie/careers#breadcrumb"
+                        }
+                    },
+                    {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://www.olabs.ie/careers#breadcrumb",
+                        "itemListElement": [
+                            {
+                                "@type": "ListItem",
+                                "position": 1,
+                                "name": "Home",
+                                "item": "https://www.olabs.ie/"
+                            },
+                            {
+                                "@type": "ListItem",
+                                "position": 2,
+                                "name": "Careers",
+                                "item": "https://www.olabs.ie/careers"
+                            }
+                        ]
+                    }
+                ]
+            }
+        </script>
 
         <!-- Preconnect for Performance -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -82,9 +183,9 @@
             </div>
         </header>
 
-        <main id="main-content">
+        <main id="main-content" tabindex="-1">
             <!-- Hero Mosaic -->
-            <section class="careers-hero" aria-label="Careers hero">
+            <section class="careers-hero" aria-labelledby="careers-hero-title">
                 <div class="careers-hero-inner">
                     <div class="careers-mosaic" aria-hidden="true">
                         <!-- Using existing assets (repeated/cropped) to match the reference mosaic style -->
@@ -290,7 +391,7 @@
                         role="region"
                         aria-label="Join our team"
                     >
-                        <h1>Join our team</h1>
+                        <h1 id="careers-hero-title">Join our team</h1>
                         <p>Become part of our mission</p>
                         <a class="btn btn-outline px-3 py-2" href="#open-roles"
                             >View all jobs &rarr;</a
@@ -379,6 +480,8 @@
                                 type="button"
                                 data-careers-video-open
                                 aria-haspopup="dialog"
+                                aria-controls="careersVideoDialog"
+                                aria-expanded="false"
                             >
                                 <span
                                     class="careers-watch-icon"
@@ -401,40 +504,46 @@
                     <h2 id="open-roles-title" class="careers-center">
                         We are looking for
                     </h2>
-                    <div class="careers-card-grid two">
-                        <a
-                            class="careers-role-card"
-                            href="#"
-                            aria-label="Finance Business Partner role"
-                        >
-                            <div>
-                                <h3>
-                                    Finance Business Partner – close to the
-                                    business and with influence in everyday life
-                                </h3>
-                                <p>Application deadline: 18-01-2026</p>
-                            </div>
-                            <span class="careers-arrow" aria-hidden="true"
-                                >&rsaquo;</span
-                            >
-                        </a>
-                        <a
-                            class="careers-role-card"
-                            href="#"
-                            aria-label="Finance Business Partner role"
-                        >
-                            <div>
-                                <h3>
-                                    Finance Business Partner – close to the
-                                    business and with influence in everyday life
-                                </h3>
-                                <p>Application deadline: 18-01-2026</p>
-                            </div>
-                            <span class="careers-arrow" aria-hidden="true"
-                                >&rsaquo;</span
-                            >
-                        </a>
-                    </div>
+                    <ul class="careers-card-grid two" role="list">
+                        <li>
+                            <a class="careers-role-card" href="#apply">
+                                <div>
+                                    <h3>
+                                        Finance Business Partner – close to the
+                                        business and with influence in everyday
+                                        life
+                                    </h3>
+                                    <p>
+                                        Application deadline:
+                                        <time datetime="2026-01-18"
+                                            >18-01-2026</time
+                                        >
+                                    </p>
+                                </div>
+                                <span class="careers-arrow" aria-hidden="true"
+                                    >&rsaquo;</span
+                                >
+                            </a>
+                        </li>
+                        <li>
+                            <a class="careers-role-card" href="#apply">
+                                <div>
+                                    <h3>
+                                        Finance Business Partner – close to the business and with influence in everyday life
+                                    </h3>
+                                    <p>
+                                        Application deadline:
+                                        <time datetime="2026-01-18"
+                                            >18-01-2026</time
+                                        >
+                                    </p>
+                                </div>
+                                <span class="careers-arrow" aria-hidden="true"
+                                    >&rsaquo;</span
+                                >
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </section>
 
@@ -456,71 +565,77 @@
                         later on.
                     </p>
 
-                    <div class="careers-card-grid two">
+                    <ul class="careers-card-grid two" role="list">
+                        <li>
+                            <a class="careers-role-card" href="#apply">
+                                <div>
+                                    <h3>
+                                        Unsolicited application Full stack (Node
+                                        + React) developer
+                                    </h3>
+                                    <p>
+                                        Application deadline:
+                                        <time datetime="2026-01-18"
+                                            >18-01-2026</time
+                                        >
+                                    </p>
+                                </div>
+                                <span class="careers-arrow" aria-hidden="true"
+                                    >&rsaquo;</span
+                                >
+                            </a>
+                        </li>
+                        <li>
+                            <a class="careers-role-card" href="#apply">
+                                <div>
+                                    <h3>
+                                        Unsolicited application Machine Learning
+                                        (ML) Engineer
+                                    </h3>
+                                    <p>
+                                        Application deadline:
+                                        <time datetime="2026-01-18"
+                                            >18-01-2026</time
+                                        >
+                                    </p>
+                                </div>
+                                <span class="careers-arrow" aria-hidden="true"
+                                    >&rsaquo;</span
+                                >
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Apply -->
+            <section
+                class="careers-roles"
+                id="apply"
+                aria-labelledby="apply-title"
+            >
+                <div class="container p-3 md:py-6 lg:py-7 xl:py-8">
+                    <h2 id="apply-title" class="careers-center">
+                        How to apply
+                    </h2>
+                    <p class="careers-subcenter">
+                        Interested in joining O.Labs? Apply for open roles or
+                        submit an unsolicited application via our contact form.
+                    </p>
+                    <div
+                        class="careers-actions"
+                        style="justify-content: center"
+                    >
                         <a
-                            class="careers-role-card"
-                            href="#"
-                            aria-label="Unsolicited application Full stack developer"
+                            class="btn btn-outline-dark px-3 py-1"
+                            href="index.html#contact"
+                            >Go to contact form</a
                         >
-                            <div>
-                                <h3>
-                                    Unsolicited application Full stack (Node +
-                                    React) developer
-                                </h3>
-                                <p>Application deadline: 18-01-2026</p>
-                            </div>
-                            <span class="careers-arrow" aria-hidden="true"
-                                >&rsaquo;</span
-                            >
-                        </a>
                         <a
-                            class="careers-role-card"
-                            href="#"
-                            aria-label="Unsolicited application Machine Learning Engineer"
+                            class="btn btn-outline-dark px-3 py-1"
+                            href="#open-roles"
+                            >Back to open roles</a
                         >
-                            <div>
-                                <h3>
-                                    Unsolicited application Machine Learning
-                                    (ML) Engineer
-                                </h3>
-                                <p>Application deadline: 18-01-2026</p>
-                            </div>
-                            <span class="careers-arrow" aria-hidden="true"
-                                >&rsaquo;</span
-                            >
-                        </a>
-                        <a
-                            class="careers-role-card"
-                            href="#"
-                            aria-label="Unsolicited application Finance Business Partner"
-                        >
-                            <div>
-                                <h3>
-                                    Finance Business Partner – close to the
-                                    business and with influence in everyday life
-                                </h3>
-                                <p>Application deadline: 18-01-2026</p>
-                            </div>
-                            <span class="careers-arrow" aria-hidden="true"
-                                >&rsaquo;</span
-                            >
-                        </a>
-                        <a
-                            class="careers-role-card"
-                            href="#"
-                            aria-label="Unsolicited application Finance Business Partner"
-                        >
-                            <div>
-                                <h3>
-                                    Finance Business Partner – close to the
-                                    business and with influence in everyday life
-                                </h3>
-                                <p>Application deadline: 18-01-2026</p>
-                            </div>
-                            <span class="careers-arrow" aria-hidden="true"
-                                >&rsaquo;</span
-                            >
-                        </a>
                     </div>
                 </div>
             </section>
@@ -530,11 +645,17 @@
         <dialog
             class="careers-dialog"
             id="careersVideoDialog"
-            aria-label="Careers video"
+            aria-labelledby="careersVideoDialogTitle"
+            aria-describedby="careersVideoDialogDesc"
         >
             <div class="careers-dialog-inner">
                 <div class="careers-dialog-top">
-                    <p class="careers-dialog-title">O.Labs – Careers</p>
+                    <h2
+                        class="careers-dialog-title"
+                        id="careersVideoDialogTitle"
+                    >
+                        O.Labs – Careers
+                    </h2>
                     <button
                         type="button"
                         class="careers-dialog-close"
@@ -545,7 +666,7 @@
                     </button>
                 </div>
                 <div class="careers-dialog-body">
-                    <p>
+                    <p id="careersVideoDialogDesc">
                         Video embed can be wired here (YouTube/Vimeo/internal
                         MP4). For now this placeholder matches the reference
                         interaction.

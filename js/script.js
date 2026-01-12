@@ -26,6 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const careersVideoDialog = document.getElementById('careersVideoDialog');
 
     let careersVideoLastActiveEl = null;
+    let careersVideoOpenerBtn = null;
     let careersVideoCloseTimer = null;
     let careersVideoIsClosing = false;
 
@@ -48,9 +49,25 @@ document.addEventListener('DOMContentLoaded', function () {
         careersVideoOpenBtns.forEach(btn => {
             btn.addEventListener('click', () => {
                 careersVideoLastActiveEl = document.activeElement;
+                careersVideoOpenerBtn = btn;
+
+                btn.setAttribute('aria-expanded', 'true');
+                if (!btn.hasAttribute('aria-controls')) {
+                    btn.setAttribute('aria-controls', 'careersVideoDialog');
+                }
 
                 if (typeof careersVideoDialog.showModal === 'function') {
                     careersVideoDialog.showModal();
+
+                    // Ensure focus starts inside the dialog for keyboard/screen reader users
+                    if (careersVideoCloseBtn) {
+                        careersVideoCloseBtn.focus();
+                    } else {
+                        const firstFocusable = careersVideoDialog.querySelector(
+                            'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+                        );
+                        if (firstFocusable) firstFocusable.focus();
+                    }
                 } else {
                     // Fallback for older browsers
                     alert('Video modal is not supported in this browser.');
@@ -81,6 +98,10 @@ document.addEventListener('DOMContentLoaded', function () {
             window.clearTimeout(careersVideoCloseTimer);
             careersVideoDialog.classList.remove('closing');
             careersVideoIsClosing = false;
+
+            if (careersVideoOpenerBtn) {
+                careersVideoOpenerBtn.setAttribute('aria-expanded', 'false');
+            }
             if (
                 careersVideoLastActiveEl &&
                 typeof careersVideoLastActiveEl.focus === 'function'
@@ -88,6 +109,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 careersVideoLastActiveEl.focus();
             }
             careersVideoLastActiveEl = null;
+            careersVideoOpenerBtn = null;
         });
     }
 
