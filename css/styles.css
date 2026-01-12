@@ -1518,21 +1518,82 @@ footer p {
 .careers-hero {
     background: #000;
     position: relative;
-    padding: var(--space-6) 0;
+    padding: var(--space-1) 0;
 }
 
 .careers-hero-inner {
     position: relative;
-    max-width: 1320px;
+    max-width: 100%;
     margin: 0 auto;
-    padding: 0 var(--space-5);
+    /* padding: 0 var(--space-5); */
 }
 
 .careers-mosaic {
-    display: grid;
-    grid-template-columns: repeat(5, minmax(0, 1fr));
-    grid-auto-rows: clamp(90px, 10vw, 140px);
-    gap: clamp(8px, 1.2vw, 14px);
+    --careers-tile-h: clamp(90px, 10vw, 140px);
+    --careers-tile-w: clamp(150px, 20vw, 240px);
+    --careers-tile-gap: clamp(8px, 1.2vw, 14px);
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--careers-tile-gap);
+}
+
+@keyframes careersMarqueeLeft {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+.careers-mosaic .row-1,
+.careers-mosaic .row-2,
+.careers-mosaic .row-3 {
+    overflow: hidden;
+    position: relative;
+}
+
+.careers-mosaic .row-1::before,
+.careers-mosaic .row-2::before,
+.careers-mosaic .row-3::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    /* subtle vignette so edges fade like the reference */
+    background: linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.85) 0%,
+        rgba(0, 0, 0, 0) 14%,
+        rgba(0, 0, 0, 0) 86%,
+        rgba(0, 0, 0, 0.85) 100%
+    );
+    z-index: 2;
+}
+
+.careers-marquee-track {
+    display: flex;
+    align-items: center;
+    gap: var(--careers-tile-gap);
+    width: max-content;
+    animation: careersMarqueeLeft 34s linear infinite;
+    will-change: transform;
+    position: relative;
+    z-index: 1;
+}
+
+/* All three rows scroll right-to-left; tune speeds slightly for depth */
+.careers-mosaic .row-1 .careers-marquee-track {
+    animation-duration: 36s;
+}
+
+.careers-mosaic .row-2 .careers-marquee-track {
+    animation-duration: 40s;
+}
+
+.careers-mosaic .row-3 .careers-marquee-track {
+    animation-duration: 38s;
 }
 
 .careers-tile {
@@ -1540,17 +1601,14 @@ footer p {
     border-radius: var(--radius-xl);
     overflow: hidden;
     position: relative;
-}
 
-.careers-tile::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image: var(--img);
-    background-size: cover;
+    height: var(--careers-tile-h);
+    width: var(--careers-tile-w);
+    flex: 0 0 auto;
+
+    background-repeat: no-repeat;
     background-position: center;
-    transform: scale(1.03);
-    filter: saturate(1.05) contrast(1.05);
+    background-size: cover;
 }
 
 .careers-tile::after {
@@ -1566,7 +1624,14 @@ footer p {
 }
 
 .careers-tile.span-2 {
-    grid-column: span 2;
+    width: calc((var(--careers-tile-w) * 2) + var(--careers-tile-gap));
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .careers-marquee-track {
+        animation: none;
+        transform: none;
+    }
 }
 
 .careers-hero-card {
