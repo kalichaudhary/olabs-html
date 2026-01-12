@@ -1,5 +1,9 @@
 // Modern JavaScript Enhancements
 document.addEventListener('DOMContentLoaded', function () {
+    const prefersReducedMotion = window.matchMedia(
+        '(prefers-reduced-motion: reduce)'
+    ).matches;
+
     // ===== Sticky Header with Scroll Effect =====
     const header = document.querySelector('header');
     let lastScroll = 0;
@@ -20,8 +24,24 @@ document.addEventListener('DOMContentLoaded', function () {
     const navToggleBtn = document.querySelector('[data-nav-toggle]');
     const navBackdrop = document.querySelector('[data-nav-backdrop]');
     const primaryNav = document.getElementById('primary-nav');
+    const navCloseBtn = document.querySelector('[data-nav-close]');
+    const mobileNavMq = window.matchMedia('(max-width: 768px)');
+    const navAnimMs = prefersReducedMotion ? 0 : 360;
 
     if (navToggleBtn && primaryNav) {
+        const syncNavVisibilityToBreakpoint = () => {
+            if (mobileNavMq.matches) {
+                const isOpen = document.body.classList.contains('nav-open');
+                primaryNav.hidden = !isOpen;
+                if (navBackdrop) navBackdrop.hidden = !isOpen;
+            } else {
+                document.body.classList.remove('nav-open');
+                primaryNav.hidden = false;
+                if (navBackdrop) navBackdrop.hidden = true;
+                navToggleBtn.setAttribute('aria-expanded', 'false');
+            }
+        };
+
         const setExpanded = isExpanded => {
             navToggleBtn.setAttribute(
                 'aria-expanded',
@@ -43,14 +63,48 @@ document.addEventListener('DOMContentLoaded', function () {
             if (!document.body.classList.contains('nav-open')) return;
             document.body.classList.remove('nav-open');
             setExpanded(false);
+
+            if (mobileNavMq.matches) {
+                window.setTimeout(() => {
+                    if (!document.body.classList.contains('nav-open')) {
+                        primaryNav.hidden = true;
+                        if (navBackdrop) navBackdrop.hidden = true;
+                    }
+                }, navAnimMs);
+            }
+
+            if (typeof navToggleBtn.focus === 'function') {
+                navToggleBtn.focus();
+            }
         };
 
         const openNav = () => {
             if (document.body.classList.contains('nav-open')) return;
+
+            if (mobileNavMq.matches) {
+                primaryNav.hidden = false;
+                if (navBackdrop) navBackdrop.hidden = false;
+
+                window.requestAnimationFrame(() => {
+                    document.body.classList.add('nav-open');
+                    setExpanded(true);
+
+                    const firstLink = primaryNav.querySelector(
+                        '.nav-panel-links a[href], a[href]'
+                    );
+                    if (firstLink && typeof firstLink.focus === 'function') {
+                        firstLink.focus();
+                    }
+                });
+                return;
+            }
+
             document.body.classList.add('nav-open');
             setExpanded(true);
 
-            const firstLink = primaryNav.querySelector('a[href]');
+            const firstLink = primaryNav.querySelector(
+                '.nav-panel-links a[href], a[href]'
+            );
             if (firstLink && typeof firstLink.focus === 'function') {
                 firstLink.focus();
             }
@@ -58,6 +112,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Ensure initial state is consistent
         setExpanded(false);
+        syncNavVisibilityToBreakpoint();
 
         navToggleBtn.addEventListener('click', () => {
             if (document.body.classList.contains('nav-open')) {
@@ -71,6 +126,10 @@ document.addEventListener('DOMContentLoaded', function () {
             navBackdrop.addEventListener('click', closeNav);
         }
 
+        if (navCloseBtn) {
+            navCloseBtn.addEventListener('click', closeNav);
+        }
+
         primaryNav.addEventListener('click', e => {
             const target = e.target;
             if (target && target.matches && target.matches('a[href]')) {
@@ -80,12 +139,48 @@ document.addEventListener('DOMContentLoaded', function () {
 
         document.addEventListener('keydown', e => {
             if (e.key === 'Escape') closeNav();
+
+            // Focus trap only when drawer is open on mobile
+            if (
+                e.key !== 'Tab' ||
+                !mobileNavMq.matches ||
+                !document.body.classList.contains('nav-open')
+            ) {
+                return;
+            }
+
+            const focusable = primaryNav.querySelectorAll(
+                'button:not([disabled]), a[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])'
+            );
+            if (!focusable.length) return;
+
+            const first = focusable[0];
+            const last = focusable[focusable.length - 1];
+            const active = document.activeElement;
+
+            if (e.shiftKey) {
+                if (active === first || !primaryNav.contains(active)) {
+                    e.preventDefault();
+                    last.focus();
+                }
+            } else {
+                if (active === last) {
+                    e.preventDefault();
+                    first.focus();
+                }
+            }
         });
 
-        // If user rotates / resizes to desktop, ensure the menu is closed
-        window.addEventListener('resize', () => {
-            if (window.innerWidth > 768) closeNav();
-        });
+        // Keep nav state correct across breakpoint changes
+        if (typeof mobileNavMq.addEventListener === 'function') {
+            mobileNavMq.addEventListener(
+                'change',
+                syncNavVisibilityToBreakpoint
+            );
+        } else {
+            // Safari fallback
+            window.addEventListener('resize', syncNavVisibilityToBreakpoint);
+        }
     }
 
     // ===== Careers: Video Dialog (optional) =====
@@ -318,6 +413,53 @@ document.addEventListener('DOMContentLoaded', function () {
         }s, transform 0.6s ease ${index * 0.1}s`;
         observer.observe(el);
     });
+
+    // ===== Modern Scroll Reveal for Sections (mobile-friendly) =====
+    const canReveal =
+        !prefersReducedMotion &&
+        'IntersectionObserver' in window &&
+        document.querySelector;
+
+    if (canReveal) {
+        const revealEls = document.querySelectorAll(
+            [
+                '.mission .flex-text',
+                '.mission .flex-image',
+                '.proposition .flex-text',
+                '.proposition .flex-image',
+                '.upcoming .section-title',
+                '.upcoming .product-grid',
+                '.trusted .container',
+                '.articles .container',
+                '.contact .flex-text',
+                '.contact .form-wrapper',
+                'footer .container',
+            ].join(',')
+        );
+
+        const revealObserver = new IntersectionObserver(
+            entries => {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) return;
+                    entry.target.classList.add('is-visible');
+                    revealObserver.unobserve(entry.target);
+                });
+            },
+            {
+                threshold: 0.12,
+                rootMargin: '0px 0px -10% 0px',
+            }
+        );
+
+        revealEls.forEach((el, idx) => {
+            el.classList.add('reveal');
+            el.style.setProperty(
+                '--reveal-delay',
+                `${Math.min(idx * 70, 280)}ms`
+            );
+            revealObserver.observe(el);
+        });
+    }
 
     // ===== Advanced Form Validation =====
     const contactForm = document.getElementById('contactForm');

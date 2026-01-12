@@ -115,16 +115,35 @@
                 </button>
 
                 <nav id="primary-nav" class="site-nav" role="navigation" aria-label="Main navigation">
-                    <a
-                        href="#main-content"
-                        class="nav-link active px-3 py-1 md:py-1 lg:py-1 xl:py-1"
-                        aria-current="page"
-                        >Home</a
-                    >
-                    <a href="#about" class="nav-link px-3 py-1 md:py-1 lg:py-1 xl:py-1">About</a>
-                    <a href="#products" class="nav-link px-3 py-1 md:py-1 lg:py-1 xl:py-1">Products</a>
-                    <a href="careers.html" class="nav-link px-3 py-1 md:py-1 lg:py-1 xl:py-1">Careers</a>
-                    <a href="#contact" class="nav-link px-3 py-1 md:py-1 lg:py-1 xl:py-1">Contact</a>
+                    <div class="nav-panel-header" aria-hidden="true">
+                        <a class="nav-panel-brand" href="/" aria-label="O.Labs Home">
+                            <img
+                                src="./assets/olabs-Logo.svg"
+                                alt=""
+                                width="110"
+                                height="36"
+                                loading="eager"
+                            />
+                        </a>
+                    </div>
+
+                    <div class="nav-panel-links">
+                        <a
+                            href="#main-content"
+                            class="nav-link active px-3 py-1 md:py-1 lg:py-1 xl:py-1"
+                            aria-current="page"
+                            >Home</a
+                        >
+                        <a href="#about" class="nav-link px-3 py-1 md:py-1 lg:py-1 xl:py-1">About</a>
+                        <a href="#products" class="nav-link px-3 py-1 md:py-1 lg:py-1 xl:py-1">Products</a>
+                        <a href="careers.html" class="nav-link px-3 py-1 md:py-1 lg:py-1 xl:py-1">Careers</a>
+                        <a href="#contact" class="nav-link px-3 py-1 md:py-1 lg:py-1 xl:py-1">Contact</a>
+                    </div>
+
+                    <div class="nav-panel-footer" aria-hidden="true">
+                        <a href="#contact" class="nav-panel-cta">Let’s talk</a>
+                        <p class="nav-panel-note">Cultivating innovation.</p>
+                    </div>
                 </nav>
 
                 <div class="nav-backdrop" data-nav-backdrop aria-hidden="true"></div>
