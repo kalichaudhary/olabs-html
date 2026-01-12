@@ -1878,6 +1878,15 @@ footer p {
     border-radius: var(--radius-xl);
     width: min(760px, calc(100% - (var(--space-5) * 2)));
     box-shadow: var(--shadow-2xl);
+    max-height: min(85vh, 820px);
+    overflow: hidden;
+}
+
+/* Keep the native <dialog> centered reliably across browsers */
+.careers-dialog[open] {
+    position: fixed;
+    inset: 0;
+    margin: auto;
 }
 
 .careers-dialog::backdrop {
@@ -1889,6 +1898,9 @@ footer p {
     background: #fff;
     border-radius: var(--radius-xl);
     overflow: hidden;
+    max-height: inherit;
+    display: flex;
+    flex-direction: column;
 }
 
 .careers-dialog-top {
@@ -1922,6 +1934,7 @@ footer p {
 .careers-dialog-body {
     padding: 18px;
     color: var(--gray-700);
+    overflow: auto;
 }
 
 .careers-dialog-placeholder {
