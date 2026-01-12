@@ -946,6 +946,7 @@ nav .nav-link:hover::before {
     border: 1px solid var(--gray-200);
     border-radius: var(--radius-lg);
     display: flex;
+    gap: var(--space-1);
     justify-content: space-between;
     align-items: flex-start;
     background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%);
@@ -996,12 +997,22 @@ nav .nav-link:hover::before {
 }
 
 .prod-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 108px;
     font-weight: bold;
     color: var(--gray-300);
     font-size: 0.875rem;
     background: transparent;
-    padding: var(--space-3) var(--space-4);
-    border-radius: var(--radius-md);
+    transition: all var(--transition-base);
+    height: 100%;
+}
+
+.prod-logo img {
+    width: 108px;
+    height: auto;
+    display: block;
     transition: all var(--transition-base);
 }
 
